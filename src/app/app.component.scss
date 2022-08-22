@@ -1,0 +1,22 @@
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: #e6e6e6;
+}
+
+.app-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-container app-list {
+    width: 80%;
+    padding: 1.5rem;
+}
+
+.app-container app-cart {
+    width: 20%;
+    background-color: #fff;
+    padding: 0.5rem;
+    height: 94vh;
+}
