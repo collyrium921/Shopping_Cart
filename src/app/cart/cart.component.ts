@@ -20,12 +20,11 @@ export class CartComponent implements OnInit {
 ]
  sum:number;
   constructor() { 
-      this.sum = this.addedToCart.reduce((accumulator: any, object: { price: any; }) => {
+      this.sum = this.addedToCart.reduce((accumulator: number, object: { price: number; }) => {
       return accumulator + object.price;
     }, 0);
   }
 
   ngOnInit(): void {
   }
-
 }

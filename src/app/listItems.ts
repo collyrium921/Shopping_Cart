@@ -1,40 +1,39 @@
 export const LIST_ITEMS=[
     {
         imageUrl:'../assets/shoe1.jpeg',
-        name:'Nike1',
+        name:'Puma 109',
         isInStock: true,
         description: "Men's running shoes",
         price: 3250
-    },
-    {
+    },{
         imageUrl:'../assets/shoe2.jpeg',
-        name:'Nike2',
+        name:'Nike 902',
         isInStock: true,
         description: "Men's running shoes",
         price: 2700
     },{
         imageUrl:'../assets/shoe3.jpeg',
-        name:'Nike3',
+        name:'Campus 386',
         isInStock: false,
-        description: "Men's running shoes",
+        description: "Men's casual shoes",
         price: 3050
     },{
         imageUrl:'../assets/shoe4.jpeg',
-        name:'Nike1',
+        name:'Campus 453',
         isInStock: true,
-        description: "Men's running shoes",
+        description: "Men's footwear",
         price: 1250
     },{
         imageUrl:'../assets/shoe5.jpeg',
-        name:'Nike1',
+        name:'Woodland 626',
         isInStock: false,
-        description: "Men's running shoes",
-        price: 3250
+        description: "Men's formal shoes",
+        price: 9250
     },{
         imageUrl:'../assets/shoe6.jpeg',
-        name:'Nike1',
+        name:'Nike 154',
         isInStock: false,
-        description: "Men's running shoes",
-        price: 3250
+        description: "Men's casual shoes",
+        price: 6250
     },
 ]
