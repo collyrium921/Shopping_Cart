@@ -2,14 +2,14 @@
     YOUR SHOPPING CART
 </div>
 
-<div class="cart-list border">
-    <div>Shoe name</div>
+<div class="cart-list border" *ngFor="let shoe of addedToCart">
+    <div>{{shoe.name}}</div>
     <div>
-        <span>price</span>
+        <span>₹ {{shoe.price | number}}</span>
         <span><i class="pi pi-times"></i></span>
     </div>
 </div>
 <div class="total cart-list">
     <div>Total</div>
-    <div>totalamount</div>
+    <div class="sum-label">₹ {{sum | number}}</div>
 </div>

@@ -2,20 +2,21 @@
     <i class="pi pi-th-large"></i>
     <i class="pi pi-list"></i>
 </div>
-<div class="list-tiles">
-    <div class="tiles">
+<div class="list-tiles col-12">
+    <div class="tiles col-4" *ngFor="let shoe of listItems">
         <div>
-            <img src="../../assets/shoe1.jpeg" alt="1">
+            <img [src]="shoe.imageUrl" alt="1">
         </div>
-        <div>
-            <span>Name of shoe</span>
-            <span>In stock</span>
+        <div class="details">
+            <span style="padding-top: 0.5rem ; "><strong>{{shoe.name}}</strong></span>
+            <span class="stock-label instock" *ngIf="shoe.isInStock">In stock</span>
+            <span class="stock-label outofstock" *ngIf="!shoe.isInStock">Out of stock</span>
         </div>
-        <div>
-            Men's running shoe
+        <div class="description">
+            {{shoe.description}}
         </div>
-        <div>Price</div>
-        <div class="cart-button">
+        <div class="price-label">₹ {{shoe.price | number}}</div>
+        <div class="cart-button" [ngClass]="shoe.isInStock?'button-enabled':'button-disabled'">
             ADD TO CART
         </div>
     </div>

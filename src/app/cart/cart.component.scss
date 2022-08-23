@@ -1,11 +1,31 @@
+.cart-heading {
+    margin-top: 1rem;
+    color: #1a6385;
+    font-size: 1.2rem;
+}
+
 .cart-list {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .border {
     border-bottom: 0.5px solid #000;
+}
+
+i {
+    background-color: #b5b5b5;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.sum-label {
+    font-size: 1.5rem;
+    color: #1a6385;
 }

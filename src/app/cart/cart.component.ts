@@ -6,8 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
-  constructor() { }
+  addedToCart =[{
+    name:'Campus 1',
+    price:2450
+  },
+  {
+    name:'Campus 2',
+    price:1450
+  },{
+    name:'Campus 3',
+    price:2000
+  }
+]
+ sum:number;
+  constructor() { 
+      this.sum = this.addedToCart.reduce((accumulator: any, object: { price: any; }) => {
+      return accumulator + object.price;
+    }, 0);
+  }
 
   ngOnInit(): void {
   }
