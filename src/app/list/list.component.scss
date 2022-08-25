@@ -16,7 +16,7 @@
 }
 
 .tiles {
-    width: 28%;
+    // width: 28%;
     margin: 1rem 2rem;
     padding: 1rem;
     background-color: #fff;
@@ -25,15 +25,39 @@
     // min-width: 300px;
 }
 
-img {
+.tilesListFormat {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tilesTilesFormat {
+    width: 28%;
+    display: block;
+}
+
+.imgTiles {
     width: 100%;
     height: 180px;
 }
 
-.details {
+.imgList {
+    width: 200px;
+    height: 135px;
+}
+
+.detailsTiles {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+}
+
+.detailsList {
+    margin: 1rem 5rem;
+}
+
+.detailsList span {
+    margin-left: 1rem;
 }
 
 .stock-label {
@@ -43,7 +67,7 @@ img {
 }
 
 .instock {
-    background-color: #f9cf61
+    background-color: #f9cf61;
 }
 
 .outofstock {
@@ -75,4 +99,12 @@ img {
 .button-enabled {
     cursor: pointer;
     background-color: #f5983b;
+}
+
+.highlight {
+    color: red;
+}
+
+.unhighlight {
+    color: #000;
 }

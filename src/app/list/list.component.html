@@ -1,23 +1,37 @@
 <div class="list-header">
-    <i class="pi pi-th-large"></i>
-    <i class="pi pi-list"></i>
+    <i class="pi pi-th-large" [ngClass]="!isListFormat ? 'highlight' : 'unhighlight'" (click)="isListFormat = false"></i>
+    <i class="pi pi-list" [ngClass]="isListFormat ? 'highlight' : 'unhighlight'" (click)="isListFormat = true"></i>
 </div>
-<div class="list-tiles col-12">
-    <div class="tiles col-4" *ngFor="let shoe of listItems; let i=index;">
+<div [ngClass]="!isListFormat ? 'list-tiles' : ''">
+    <div class="tiles" [ngClass]="!isListFormat ? 'tilesTilesFormat' : 'tilesListFormat'" *ngFor="let shoe of listItems; let i = index">
+        <div style="display: inherit;">
+            <div>
+                <img [ngClass]="!isListFormat ? 'imgTiles' : 'imgList'" [src]="shoe.imageUrl" alt="1" />
+            </div>
+
+            <div [ngClass]="!isListFormat ? 'detailsTiles' : 'detailsList'">
+                <span style="padding-top: 0.5rem;">
+          <strong>{{ shoe.name }}</strong>
+        </span>
+                <span class="stock-label instock" *ngIf="shoe.isInStock">In stock</span>
+                <span class="stock-label outofstock" *ngIf="!shoe.isInStock">
+          Out of stock
+        </span>
+                <div *ngIf="isListFormat" style="margin-left: 1rem;" class="price-label">
+                    ₹ {{ shoe.price | number }}
+                </div>
+            </div>
+            <div class="description" *ngIf="!isListFormat">
+                {{ shoe.description }}
+            </div>
+            <div class="price-label" *ngIf="!isListFormat">
+                ₹ {{ shoe.price | number }}
+            </div>
+        </div>
         <div>
-            <img [src]="shoe.imageUrl" alt="1">
-        </div>
-        <div class="details">
-            <span style="padding-top: 0.5rem ; "><strong>{{shoe.name}}</strong></span>
-            <span class="stock-label instock" *ngIf="shoe.isInStock">In stock</span>
-            <span class="stock-label outofstock" *ngIf="!shoe.isInStock">Out of stock</span>
-        </div>
-        <div class="description">
-            {{shoe.description}}
-        </div>
-        <div class="price-label">₹ {{shoe.price | number}}</div>
-        <div class="cart-button" [ngClass]="shoe.isInStock?'button-enabled':'button-disabled'" (click)="addItemToCart(i, shoe)">
-            ADD TO CART
+            <div class="cart-button" [ngClass]="shoe.isInStock ? 'button-enabled' : 'button-disabled'" (click)="addItemToCart(i, shoe)">
+                ADD TO CART
+            </div>
         </div>
     </div>
 </div>
