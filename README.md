@@ -1,6 +1,6 @@
 # Inuvest Assignment KAJAL SINGHAL
 
-##Technology Used
+## Technology Used
 	Angular
 	HTML
 	TypeScript
@@ -15,8 +15,8 @@
 	npm install
 	npm start
 	git checkout 'branch_name' (to check the particular phase)
-App should run on 'http://localhost:4200/
+App should run on http://localhost:4200/
 
-##Pre-requisite
+## Pre-requisite
 	node should be installed
 
