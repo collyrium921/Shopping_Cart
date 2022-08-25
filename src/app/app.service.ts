@@ -9,10 +9,7 @@ interface item{
 })
 
 export class AppService {
- 
-
-  constructor() {
-   }
+  constructor() {}
 
   public cartTotal: BehaviorSubject<number> = new BehaviorSubject<number>(3);
 

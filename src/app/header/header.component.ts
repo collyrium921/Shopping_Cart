@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
@@ -6,14 +6,13 @@ import { AppService } from '../app.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  //variable declaration
   cartTotal!:number
   constructor(private appService: AppService) {
+    //get the value of total items in cart
     this.appService.cartTotal.subscribe(val=>{
       this.cartTotal = val
     })
-  }
-
-  ngOnInit(): void {
   }
 }

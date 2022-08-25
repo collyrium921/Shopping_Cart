@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { AppService } from '../app.service'
 import { LIST_ITEMS } from '../listItems'
 
@@ -7,15 +7,18 @@ import { LIST_ITEMS } from '../listItems'
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
+  //variable delaration
   isListFormat: boolean = false
   listItems = LIST_ITEMS
   item: any = []
   constructor(private appService: AppService) {}
 
-  ngOnInit(): void {}
-
-  addItemToCart(i: number, shoe: any) {
+/**
+ * @param shoe object that is clicked
+ * @function addItemToCart to add the clicked item to cart
+ */
+  addItemToCart(shoe: any) {
     this.item.push({
       name: shoe.name,
       price: shoe.price,

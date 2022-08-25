@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { AppService } from '../app.service';
+import { AppService } from '../app.service'
 
 @Component({
   selector: 'app-cart',
@@ -7,6 +7,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  //variable declaration
   addedToCart = [
     {
       name: 'Campus 1',
@@ -17,21 +18,23 @@ export class CartComponent implements OnInit {
       price: 1450,
     },
   ]
-
   sum!: number
+
   constructor(private appService: AppService) {
-    this.getTotalPrice();
+    this.getTotalPrice()
   }
 
   ngOnInit(): void {
-    this.appService.addedItem.subscribe( value => {
+    //get the added item everytime the user clicks on add to cart button
+    this.appService.addedItem.subscribe((value) => {
       this.addedToCart.push(value)
-      this.getTotalPrice();
-      this.appService.cartTotal.next(this.addedToCart.length);
-    } );
+      this.getTotalPrice()
+      this.appService.cartTotal.next(this.addedToCart.length)
+    })
   }
 
-  getTotalPrice(){
+  //calculate the toal price when the item is added or deleted
+  getTotalPrice() {
     this.sum = this.addedToCart.reduce(
       (temp: number, object: { price: number }) => {
         return temp + object.price
@@ -39,9 +42,11 @@ export class CartComponent implements OnInit {
       0,
     )
   }
-   removeElement(i:number){
-    this.addedToCart.splice(i,1)
-    this.appService.cartTotal.next(this.addedToCart.length);
-    this.getTotalPrice();
+
+  //function to remove the item from particular index i
+  removeElement(i: number) {
+    this.addedToCart.splice(i, 1)
+    this.appService.cartTotal.next(this.addedToCart.length)
+    this.getTotalPrice()
   }
 }

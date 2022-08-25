@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "SimonSiefke.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "html.format.enable": false,
+    "html.format.endWithNewline": true
+}
