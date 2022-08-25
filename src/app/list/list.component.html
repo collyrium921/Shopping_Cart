@@ -3,7 +3,7 @@
     <i class="pi pi-list"></i>
 </div>
 <div class="list-tiles col-12">
-    <div class="tiles col-4" *ngFor="let shoe of listItems">
+    <div class="tiles col-4" *ngFor="let shoe of listItems; let i=index;">
         <div>
             <img [src]="shoe.imageUrl" alt="1">
         </div>
@@ -16,7 +16,7 @@
             {{shoe.description}}
         </div>
         <div class="price-label">₹ {{shoe.price | number}}</div>
-        <div class="cart-button" [ngClass]="shoe.isInStock?'button-enabled':'button-disabled'">
+        <div class="cart-button" [ngClass]="shoe.isInStock?'button-enabled':'button-disabled'" (click)="addItemToCart(i, shoe)">
             ADD TO CART
         </div>
     </div>
